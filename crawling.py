@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from time import sleep
 import time
 import os
-from addCategory import addCategory
+from preprocessing import addCategory
 
 
 """
