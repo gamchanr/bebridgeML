@@ -1,0 +1,2 @@
+How do you define system equations in model-based design if you don't know how the system works?
+weather

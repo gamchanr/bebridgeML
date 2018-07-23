@@ -1,0 +1,2 @@
+What is the best solution for a highway-based wind turbine to have constant AC irrespective of fluctuating wind speed?
+weather

@@ -1,0 +1,2 @@
+If you put a superconductor in space and insulate it from sunlight, will it stay cold enough to keep zero resistance forever, or will it eventually warm up while under electrical load?
+weather

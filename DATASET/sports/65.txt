@@ -1,0 +1,2 @@
+How would I work a system in Unity game engine that changes some car properties like speed with a newly acquired skin? I mean, I want to change player attributes whenever the player changes skin. I'm stuck.
+sports

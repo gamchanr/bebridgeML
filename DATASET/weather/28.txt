@@ -1,0 +1,3 @@
+How would you make a wind powered LED light that has no battery and provides light whenever there is wind?
+https://www.quora.com/unanswered/What-is-a-commercially-available-tiny-wind-powered-street-light-which-only-powers-LED-lights-using-no-battery
+weather
