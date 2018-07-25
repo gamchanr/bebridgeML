@@ -36,3 +36,21 @@ def categoryList(dirPath):
     return categoryList
 
 
+def data2list(dirPath):
+    """
+    Input: path to DATASET directory
+    Output: single list with all data as elements with filetype '.txt'
+    """
+    dataList = []
+    fileExt = '*.txt'
+
+    for root, dirs, files in os.walk(dirPath):
+        for a in glob.glob(os.path.join(root, fileExt)):
+            with open(a, "r") as f:
+                line = f.readline().rstrip()
+                dataList.append(line)
+
+    return dataList
+
+if __name__ == '__main__':
+    data2list('./DATASET/')

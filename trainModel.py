@@ -43,6 +43,7 @@ def basicModel(dirPath):
         with open(t, 'r') as f:
             f = f.read()
             t = f.split('\n')
+            #t = ''.join(t)
             training_data.append({'data' : t[0], 'flag' : category_list.index(t[-1])})
 
     if debug:
