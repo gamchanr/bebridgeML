@@ -33,6 +33,11 @@ def categoryList(dirPath):
         for dirName in dirs:
             categoryList.append(dirName)
 
+    """
+    just for the demo
+    """
+    categoryList = ["Tours-travel", "food", "culture", "Society"]
+
     return categoryList
 
 
