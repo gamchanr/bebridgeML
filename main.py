@@ -20,6 +20,7 @@ debug = 0
 chosenModel = "basic"
 updateModel = 0
 question = "Does Korean stil eat dog?" #food or culture
+#question = "What is the most famous soccer team in Korea?"
 #question = "what is one famous place to visit in United States?" #tours-travel
 #question = "What is the most impressive social issue in Canada?" #society or life-and-living
 #question = "what is the most famous sports in Norway" #sports
