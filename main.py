@@ -19,14 +19,15 @@ Output: Classified category
 debug = 0
 chosenModel = "basic"
 updateModel = 0
-question = "Does Korean stil eat dog?" #food or culture
+targetCategory = ["Tours-travel", "food", "culture", "Society"]
+#question = "Does Korean stil eat dog?" #food or culture
 #question = "What is the most famous soccer team in Korea?"
 #question = "what is one famous place to visit in United States?" #tours-travel
 #question = "What is the most impressive social issue in Canada?" #society or life-and-living
 #question = "what is the most famous sports in Norway" #sports
 #question = "how does Korean think about their happiness" #culture or life-and-living
 #question = "How do musicians find places for their tours?" #tours-travel
-#question = "Who is the most famous person in Korea" #life-and-living
+question = "Who is the most famous person in Korea?" #life-and-living
 """
 question = "Why is Korea so hot in summer and so cold in winter? \n \n when I was young, I had a chance to travel Korea but the weather was extremely hot in summer and cold in winter"
 question = question.splitlines()
@@ -56,8 +57,10 @@ def MLprocessing(question):
         X_new_counts = loaded_vec.transform(docs)
         X_new_tfidf = loaded_tfidf.transform(X_new_counts)
         predicted = loaded_model.predict(X_new_tfidf)
-
-        print("Applyed category:", category_list[predicted[0]])
+        if category_list[predicted[0]] in targetCategory:
+            print("Applyed category:", category_list[predicted[0]])
+        else:
+            print("'Questions out of category' (chosen category: %s)" %category_list[predicted[0]])
 
         return (category_list[predicted[0]])
 

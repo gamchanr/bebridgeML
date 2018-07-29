@@ -35,8 +35,8 @@ def categoryList(dirPath):
 
     """
     just for the demo
-    """
     categoryList = ["Tours-travel", "food", "culture", "Society"]
+    """
 
     return categoryList
 
