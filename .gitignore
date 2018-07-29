@@ -3,3 +3,4 @@ venv/*
 *.gz
 sentenceSim/TRAINED_MODEL/*
 sentenceSim/data/*
+**/.DS_Store
