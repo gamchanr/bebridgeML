@@ -1,2 +1,6 @@
 venv/*
 *.pyc
+*.gz
+sentenceSim/TRAINED_MODEL/*
+sentenceSim/data/*
+**/.DS_Store
