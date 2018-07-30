@@ -16,7 +16,7 @@ MAX_ITER = 10
 existCategory = ["food","culture", "weather", "Tours-travel", "Human-Behavior","Society","Jobs-and-Careers","Life-and-Living-2", "sports"]
 
 for i in range(len(category)):
-    filepath = "./DATASET/"+category[i]+"/"
+    filepath = "./DATASET_ETC/"+category[i]+"/"
     if not os.path.isdir(filepath):
         os.mkdir(filepath)
         print("Generated category directory in DATASET")

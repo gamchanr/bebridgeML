@@ -27,7 +27,8 @@ targetCategory = ["Tours-travel", "food", "culture", "Society"]
 #question = "what is the most famous sports in Norway" #sports
 #question = "how does Korean think about their happiness" #culture or life-and-living
 #question = "How do musicians find places for their tours?" #tours-travel
-question = "Who is the most famous person in Korea?" #life-and-living
+#question = "Who is the most famous person in Korea?" #life-and-living
+question = "who is the best football player in usa?"
 """
 question = "Why is Korea so hot in summer and so cold in winter? \n \n when I was young, I had a chance to travel Korea but the weather was extremely hot in summer and cold in winter"
 question = question.splitlines()
@@ -57,10 +58,12 @@ def MLprocessing(question):
         X_new_counts = loaded_vec.transform(docs)
         X_new_tfidf = loaded_tfidf.transform(X_new_counts)
         predicted = loaded_model.predict(X_new_tfidf)
+
         if category_list[predicted[0]] in targetCategory:
             print("Applyed category:", category_list[predicted[0]])
         else:
-            print("'Questions out of category' (chosen category: %s)" %category_list[predicted[0]])
+            print("'Invalid category' (chosen category: %s)" %category_list[predicted[0]])
+            return "etc"
 
         return (category_list[predicted[0]])
 

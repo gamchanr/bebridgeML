@@ -1,15 +1,11 @@
 from time import time
 import pandas as pd
-
 import matplotlib
-
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split
-
 import tensorflow as tf
-
 from keras.models import Model, Sequential
 from keras.layers import Input, Embedding, LSTM, GRU, Conv1D, Conv2D, GlobalMaxPool1D, Dense, Dropout
 from keras import optimizers

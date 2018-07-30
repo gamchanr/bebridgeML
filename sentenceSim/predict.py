@@ -32,4 +32,5 @@ model = load_model('./TRAINED_MODEL/SiameseLSTM_v0.h5', custom_objects={'ManDist
 model.summary()
 
 prediction = model.predict([X_test['left'], X_test['right']])
+print("Q1: %s, Q2: %s" %(X_test['left'], X_test['right']))
 print(prediction)
