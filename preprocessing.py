@@ -57,5 +57,6 @@ def data2list(dirPath):
 
     return dataList
 
+
 if __name__ == '__main__':
     data2list('./DATASET/')

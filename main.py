@@ -9,6 +9,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
 from preprocessing import categoryList
 from trainModel import basicModel
+from validation import notInDic
 
 
 """
@@ -28,7 +29,7 @@ targetCategory = ["Tours-travel", "food", "culture", "Society"]
 #question = "how does Korean think about their happiness" #culture or life-and-living
 #question = "How do musicians find places for their tours?" #tours-travel
 #question = "Who is the most famous person in Korea?" #life-and-living
-question = "who is the best football player in usa?"
+question = "who is the best football player in usaaaaa?"
 """
 question = "Why is Korea so hot in summer and so cold in winter? \n \n when I was young, I had a chance to travel Korea but the weather was extremely hot in summer and cold in winter"
 question = question.splitlines()
@@ -36,6 +37,12 @@ question = ''.join(question)
 """
 
 def MLprocessing(question):
+    """
+    if notInDic(question):
+        print("not in dic")
+        return False
+    """
+
     # search category list in DATASET dir
     dirPath = "./DATASET/"
     category_list = categoryList(dirPath)
