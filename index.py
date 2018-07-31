@@ -9,4 +9,8 @@ def main():
     return MLprocessing(question)
 
 if __name__ == "__main__":
+    print("==========reload=========")
+    print("==========reload=========")
+    print("==========reload=========")
+    print("==========reload=========")
     app.run(debug=True, host='0.0.0.0', port=9000)
