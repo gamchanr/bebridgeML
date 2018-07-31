@@ -29,7 +29,8 @@ targetCategory = ["Tours-travel", "food", "culture", "Society"]
 #question = "how does Korean think about their happiness" #culture or life-and-living
 #question = "How do musicians find places for their tours?" #tours-travel
 #question = "Who is the most famous person in Korea?" #life-and-living
-question = "who is the best football player in usaaaaa?"
+#question = "are they racist?"
+question = "what's the best food in usa?"
 """
 question = "Why is Korea so hot in summer and so cold in winter? \n \n when I was young, I had a chance to travel Korea but the weather was extremely hot in summer and cold in winter"
 question = question.splitlines()
@@ -46,6 +47,11 @@ def MLprocessing(question):
     # search category list in DATASET dir
     dirPath = "./DATASET/"
     category_list = categoryList(dirPath)
+
+    # demo case
+    if 'Life-and-Living-2' in category_list:
+        category_list.remove('Life-and-Living-2')
+
     if debug: 
         print("category list: ", category_list, "(total: ", len(category_list), ")")
     

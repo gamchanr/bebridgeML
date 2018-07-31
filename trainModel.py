@@ -21,6 +21,11 @@ def basicModel(dirPath):
     
     # search category list in DATASET dir
     category_list = categoryList(dirPath)
+
+    # demo case
+    if 'Life-and-Living-2' in category_list:
+        category_list.remove('Life-and-Living-2')
+
     if debug:
         print("category list: ", category_list, "(total: ", len(category_list), ")")
 
