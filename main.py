@@ -61,7 +61,7 @@ def MLprocessing(question):
             basicModel(dirPath)
 
         # apply Models
-        print("Asked question:", question)
+        # print("Asked question:", question)
         docs = [question]
 
         loaded_vec = CountVectorizer(vocabulary=pickle.load(open("./TRAINED_MODEL/count_vector.pkl", "rb")))
