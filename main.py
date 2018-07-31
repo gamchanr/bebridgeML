@@ -52,9 +52,9 @@ def MLprocessing(question):
     if 'Life-and-Living-2' in category_list:
         category_list.remove('Life-and-Living-2')
 
-    if debug: 
+    if debug:
         print("category list: ", category_list, "(total: ", len(category_list), ")")
-    
+
     if chosenModel=="basic":
         # update Models
         if updateModel:
@@ -72,13 +72,16 @@ def MLprocessing(question):
         X_new_tfidf = loaded_tfidf.transform(X_new_counts)
         predicted = loaded_model.predict(X_new_tfidf)
 
-        if category_list[predicted[0]] in targetCategory:
-            print("Applyed category:", category_list[predicted[0]])
-        else:
-            print("'Invalid category' (chosen category: %s)" %category_list[predicted[0]])
-            return "etc"
+        #@Jungwon
+        #Trying all category
 
-        return (category_list[predicted[0]])
+        # if category_list[predicted[0]] in targetCategory:
+        #     print("Applyed category:", category_list[predicted[0]])
+        # else:
+        #     print("'Invalid category' (chosen category: %s)" %category_list[predicted[0]])
+        #     return "etc"
+
+        return (category_list[predicted[0]].lower())
 
 
 if __name__ == '__main__':
