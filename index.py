@@ -2,6 +2,8 @@ from flask import Flask, render_template,request
 from main import MLprocessing
 from flask_pymongo import PyMongo
 from elasticsearch import Elasticsearch
+import time
+
 INDEX_NAME = "msg_index"  # the name of the index
 DOC_TYPE = "doc"  # we have a single type of document, so it doesn't matter
 INDEX_SETTINGS = {
@@ -80,6 +82,9 @@ if __name__ == "__main__":
         es = Elasticsearch(['https://vpc-chatbot-5a7mbd7a6rma5a6vltvnrfxbdu.eu-west-1.es.amazonaws.com:443'])
         if es.indices.exists(INDEX_NAME):
             es.indices.delete(index=INDEX_NAME)
+        print("Sleep")
+        time.sleep(5)
+        print("Start")
         es.indices.create(index=INDEX_NAME, body=INDEX_SETTINGS)
         questions = mongo.db.questions.find({})
         for question in questions :
