@@ -69,12 +69,12 @@ def main():
     return MLprocessing(question)
 
 if __name__ == "__main__":
-    print("==========reload=========")
+    print("==========reload start=========")
     questions = mongo.db.questions.find({})
 
     for question in questions :
-        print(question['_id'])
-        print(MLprocessing(question['text']))
+        # print(question['_id'])
+        # print(MLprocessing(question['text']))
         mongo.db.questions.update_one({'_id':question['_id']}, {'$set': {'category':MLprocessing(question['text'])}})
 
     try :
@@ -96,5 +96,5 @@ if __name__ == "__main__":
             es.index(index=INDEX_NAME, doc_type=DOC_TYPE, id=question['_id'], body=body)
     except :
         print("It won't work in the local machine")
-    print("==========reload=========")
+    print("==========reload done=========")
     app.run(debug=True, host='0.0.0.0', port=9000)
