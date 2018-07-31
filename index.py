@@ -77,7 +77,7 @@ if __name__ == "__main__":
 
     try :
         # es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
-        es = Elasticsearch([{'host': 'https://vpc-chatbot-5a7mbd7a6rma5a6vltvnrfxbdu.eu-west-1.es.amazonaws.com', 'port': 443}])
+        es = Elasticsearch(['https://vpc-chatbot-5a7mbd7a6rma5a6vltvnrfxbdu.eu-west-1.es.amazonaws.com:443'])
         if es.indices.exists(INDEX_NAME):
             es.indices.delete(index=INDEX_NAME)
         es.indices.create(index=INDEX_NAME, body=INDEX_SETTINGS)
