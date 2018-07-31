@@ -86,7 +86,7 @@ if __name__ == "__main__":
         time.sleep(5)
         print("Start")
         es.indices.create(index=INDEX_NAME, body=INDEX_SETTINGS)
-        questions = mongo.db.questions.find({'answer_cnt': { '$gte': 1 }})
+        questions = mongo.db.questions.find({'answer_count': { '$gte': 1 }})
         for question in questions :
             print(question['text'])
             body =  {
