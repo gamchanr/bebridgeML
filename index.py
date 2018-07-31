@@ -81,6 +81,7 @@ if __name__ == "__main__":
         # es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
         es = Elasticsearch(['https://vpc-chatbot-5a7mbd7a6rma5a6vltvnrfxbdu.eu-west-1.es.amazonaws.com:443'])
         if es.indices.exists(INDEX_NAME):
+            print("Delete previous index")
             es.indices.delete(index=INDEX_NAME)
         print("Sleep")
         time.sleep(5)
@@ -88,11 +89,12 @@ if __name__ == "__main__":
         es.indices.create(index=INDEX_NAME, body=INDEX_SETTINGS)
         questions = mongo.db.questions.find({'answer_count': { '$gte': 1 }})
         for question in questions :
-            print(question['text'])
+            # print(question['text'])
             body =  {
                 "question" : question['text'],
                 "tags" : [question['target_country'].replace(" ", "-"), question['category']]
               }
+            print(body)
             es.index(index=INDEX_NAME, doc_type=DOC_TYPE, id=question['_id'], body=body)
     except :
         print("It won't work in the local machine")
