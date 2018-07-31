@@ -88,6 +88,7 @@ if __name__ == "__main__":
         es.indices.create(index=INDEX_NAME, body=INDEX_SETTINGS)
         questions = mongo.db.questions.find({})
         for question in questions :
+            print("Insert")
             body =  {
                 "question" : question['text'],
                 "tags" : [question['target_country'].replace("-", " "), question['category']]
