@@ -91,7 +91,7 @@ if __name__ == "__main__":
             print(question['text'])
             body =  {
                 "question" : question['text'],
-                "tags" : [question['target_country'].replace("-", " "), question['category']]
+                "tags" : [question['target_country'].replace(" ", "-"), question['category']]
               }
             es.index(index=INDEX_NAME, doc_type=DOC_TYPE, id=question['_id'], body=body)
     except :
